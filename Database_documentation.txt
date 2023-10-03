@@ -1,0 +1,50 @@
+Documenting your database schema is essential for understanding how your database is structured, the purpose of each table, and the relationships between them. Below is an example of how you can document your database schema:
+
+Database Schema Documentation for E-commerce App
+
+Category Table
+
+Purpose: Stores information about product categories.
+Columns:
+id: Unique identifier for the category.
+name: The name of the category (e.g., Electronics, Clothing).
+Relationships:
+None
+Product Table
+
+Purpose: Contains information about products available in the e-commerce store.
+Columns:
+id: Unique identifier for the product.
+name: The name of the product.
+description: A brief description of the product.
+price: The price of the product.
+inventory_count: The current inventory count of the product.
+category_id: Foreign key referencing the Category table, indicating the category to which the product belongs.
+Relationships:
+Many-to-One relationship with Category table: Many products can belong to one category.
+Sale Table
+
+Purpose: Records sales transactions, including the products sold and the quantity.
+Columns:
+id: Unique identifier for the sale.
+sale_date: The date and time when the sale occurred.
+quantity: The quantity of the product sold in this transaction.
+product_id: Foreign key referencing the Product table, indicating the product sold in the sale.
+Relationships:
+Many-to-One relationship with Product table: Many sales can be associated with one product.
+InventoryHistory Table
+
+Purpose: Tracks changes in the inventory of products over time.
+Columns:
+id: Unique identifier for the inventory history entry.
+timestamp: The date and time when the inventory change occurred.
+product_id: Foreign key referencing the Product table, indicating the product for which inventory is being tracked.
+quantity_change: The change in inventory quantity (positive for additions, negative for deductions).
+reason: A description of the reason for the inventory change.
+Relationships:
+Many-to-One relationship with Product table: Many inventory history entries can be associated with one product.
+This database schema supports the functionality of e-commerce app, allowing you to manage product categories, products, record sales transactions, and track inventory changes over time. The relationships between tables help maintain data integrity and ensure that products are associated with the correct categories and sales transactions.
+
+
+
+
