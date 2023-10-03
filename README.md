@@ -48,11 +48,25 @@ pip install -r requirements.txt
 ```
 # Set up the database configuration:
 
-Copy the .env.example file to .env:
+This code is handling connection of postgressql database use config.py file to provide information related to database.It will handle all other things by itself
+Provide here information in config.py
 
-```bash
-cp .env.example .env
-Edit the .env file to configure your PostgreSQL database connection parameters, such as POSTGRESQL_HOST, POSTGRESQL_USER, POSTGRESQL_PASSWORD, and POSTGRESQL_DATABASE_NAME.
+
+
+```python
+POSTGRESQL_PROTOCOL = conf('POSTGRESQL_PROTOCOL', 'postgresql+psycopg2')
+POSTGRESQL_HOST = conf('POSTGRESQL_HOST','localhost')  # use your postgreshost.
+POSTGRESQL_PORT = conf('POSTGRESQL_PORT','5432')  # use your database port
+POSTGRESQL_USER = conf('POSTGRESQL_USER','postgres') 
+POSTGRESQL_PASSWORD = conf('POSTGRESQL_PASSWORD','postgres')
+POSTGRESQL_DATABASE_NAME = conf('POSTGRESQL_DATABASE_NAME','ecom1')
+POSTGRESQL_PROTOCOL = conf('POSTGRESQL_PROTOCOL', 'postgresql+psycopg2')
+POSTGRESQL_HOST = conf('POSTGRESQL_HOST','localhost')
+POSTGRESQL_PORT = conf('POSTGRESQL_PORT','5432')
+POSTGRESQL_USER = conf('POSTGRESQL_USER','postgres')
+POSTGRESQL_PASSWORD = conf('POSTGRESQL_PASSWORD','postgres')
+POSTGRESQL_DATABASE_NAME = conf('POSTGRESQL_DATABASE_NAME','ecom1')
+
 ```
 
 # Initialize the database:
