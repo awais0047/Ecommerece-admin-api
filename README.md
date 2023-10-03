@@ -31,35 +31,40 @@ Required Python packages (install using pip install -r requirements.txt)
 # Installation
 Clone the project repository:
 
-bash
-Copy code
+```bash
 git clone <repository-url>
 cd ecommerece-admin-api
+```
 Create a virtual environment (optional but recommended):
 
-bash
+``` bash
 python -m venv venv
 source venv/bin/activate  # On Windows, use 'venv\Scripts\activate'
-Install project dependencies:
+```
+# Install project dependencies:
 
-bash
+```bash
 pip install -r requirements.txt
-Set up the database configuration:
+```
+# Set up the database configuration:
 
 Copy the .env.example file to .env:
 
-bash
+```bash
 cp .env.example .env
 Edit the .env file to configure your PostgreSQL database connection parameters, such as POSTGRESQL_HOST, POSTGRESQL_USER, POSTGRESQL_PASSWORD, and POSTGRESQL_DATABASE_NAME.
 
-Initialize the database:
+# Initialize the database:
 
-bash
+```bash
 python db.py
 Start the API server:
+```
 
-bash
+```bash
 python main.py
+```
+
 The API should now be running at http://localhost:8000 by default.
 
 # Configuration
