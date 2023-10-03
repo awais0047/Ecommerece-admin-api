@@ -261,6 +261,8 @@ Example Request:
 {
   "quantity_change": -5
 }
+```
+
 Example Response:
 ```json
 {
