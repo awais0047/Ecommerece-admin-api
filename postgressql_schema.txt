@@ -1,0 +1,27 @@
+CREATE TABLE categories (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR
+);
+
+CREATE TABLE products (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR,
+    description VARCHAR,
+    price FLOAT,
+    inventory_count INTEGER,
+    category_id INTEGER REFERENCES categories(id)
+);
+
+CREATE TABLE sales (
+    id SERIAL PRIMARY KEY,
+    product_id INTEGER REFERENCES products(id),
+    sale_date TIMESTAMP WITHOUT TIME ZONE DEFAULT NOW() NOT NULL,
+    quantity_sold INTEGER
+);
+
+CREATE TABLE inventory_history (
+    id SERIAL PRIMARY KEY,
+    product_id INTEGER REFERENCES products(id),
+    change_date TIMESTAMP WITHOUT TIME ZONE DEFAULT NOW() NOT NULL,
+    quantity_change INTEGER NOT NULL
+);
